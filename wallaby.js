@@ -1,10 +1,10 @@
-module.exports = (w) => ({
-  files: ["src/**/*.mjs"],
+module.exports = w => ({
+  files: ['src/**/*.mjs'],
 
-  tests: ["test/**/*.spec.mjs"],
+  tests: ['test/**/*.spec.mjs'],
 
   env: {
-    type: "node",
+    type: 'node',
   },
 
   compiler: {},

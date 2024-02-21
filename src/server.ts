@@ -1,5 +1,5 @@
-import { createApp } from "./prices_typed";
-import { InMemoryDatabase } from "./database";
+import { createApp } from './prices_typed';
+import { InMemoryDatabase } from './database';
 
 const port = 5010;
 const app = createApp(new InMemoryDatabase().withTestData());

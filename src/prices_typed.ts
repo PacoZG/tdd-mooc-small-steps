@@ -1,6 +1,6 @@
-import "./polyfills";
-import express from "express";
-import { Database } from "./database";
+import './polyfills';
+import express from 'express';
+import { Database } from './database';
 
 // Refactor the following code to get rid of the legacy Date class.
 // Use Temporal.PlainDate instead. See /test/date_conversion.spec.mjs for examples.
@@ -8,14 +8,14 @@ import { Database } from "./database";
 const createApp = (database: Database) => {
   const app = express();
 
-  app.put("/prices", (req, res) => {
+  app.put('/prices', (req, res) => {
     const type = req.query.type as string;
     const cost = parseInt(req.query.cost as string);
     database.setBasePrice(type, cost);
     res.json();
   });
 
-  app.get("/prices", (req, res) => {
+  app.get('/prices', (req, res) => {
     const age = req.query.age ? parseInt(req.query.age as string) : undefined;
     const type = req.query.type as string;
     const baseCost = database.findBasePriceByType(type)!.cost;
@@ -31,7 +31,7 @@ const createApp = (database: Database) => {
   };
 
   const calculateCost = (age: number | undefined, type: string, date: Date | undefined, baseCost: number) => {
-    if (type === "night") {
+    if (type === 'night') {
       return calculateCostForNightTicket(age, baseCost);
     } else {
       return calculateCostForDayTicket(age, date, baseCost);

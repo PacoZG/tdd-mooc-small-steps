@@ -23,20 +23,20 @@ export class InMemoryDatabase implements Database {
   holidays: Holiday[] = [];
 
   withTestData = () => {
-    this.setBasePrice("1jour", 35);
-    this.setBasePrice("night", 19);
-    this.addHoliday("2019-02-18", "winter");
-    this.addHoliday("2019-02-25", "winter");
-    this.addHoliday("2019-03-04", "winter");
+    this.setBasePrice('1jour', 35);
+    this.setBasePrice('night', 19);
+    this.addHoliday('2019-02-18', 'winter');
+    this.addHoliday('2019-02-25', 'winter');
+    this.addHoliday('2019-03-04', 'winter');
     return this;
   };
 
   setBasePrice = (type: string, cost: number) => {
-    this.basePrice = this.basePrice.filter((row) => row.type !== type);
+    this.basePrice = this.basePrice.filter(row => row.type !== type);
     this.basePrice.push({ type, cost });
   };
 
-  findBasePriceByType = (type: string) => this.basePrice.find((row) => row.type === type);
+  findBasePriceByType = (type: string) => this.basePrice.find(row => row.type === type);
 
   addHoliday = (holiday: string, description: string) => {
     this.holidays.push({ holiday, description });
