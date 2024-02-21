@@ -4,7 +4,7 @@ import express from "express";
 // Refactor the following code to get rid of the legacy Date class.
 // Use Temporal.PlainDate instead. See /test/date_conversion.spec.mjs for examples.
 
-function createApp(database) {
+const createApp = database => {
   const app = express();
 
   app.put("/prices", (req, res) => {
@@ -23,21 +23,21 @@ function createApp(database) {
     res.json({ cost });
   });
 
-  function parseDate(dateString) {
+  const parseDate = dateString => {
     if (dateString) {
       return new Date(dateString);
     }
-  }
+  };
 
-  function calculateCost(age, type, date, baseCost) {
+  const calculateCost = (age, type, date, baseCost) => {
     if (type === "night") {
       return calculateCostForNightTicket(age, baseCost);
     } else {
       return calculateCostForDayTicket(age, date, baseCost);
     }
-  }
+  };
 
-  function calculateCostForNightTicket(age, baseCost) {
+  const calculateCostForNightTicket = (age, baseCost) => {
     if (age === undefined) {
       return 0;
     }
@@ -48,9 +48,9 @@ function createApp(database) {
       return Math.ceil(baseCost * 0.4);
     }
     return baseCost;
-  }
+  };
 
-  function calculateCostForDayTicket(age, date, baseCost) {
+  const calculateCostForDayTicket = (age, date, baseCost) => {
     let reduction = calculateReduction(date);
     if (age === undefined) {
       return Math.ceil(baseCost * (1 - reduction / 100));
@@ -65,21 +65,19 @@ function createApp(database) {
       return Math.ceil(baseCost * 0.75 * (1 - reduction / 100));
     }
     return Math.ceil(baseCost * (1 - reduction / 100));
-  }
+  };
 
-  function calculateReduction(date) {
+  const calculateReduction = date => {
     let reduction = 0;
     if (date && isMonday(date) && !isHoliday(date)) {
       reduction = 35;
     }
     return reduction;
-  }
+  };
 
-  function isMonday(date) {
-    return date.getDay() === 1;
-  }
+  const isMonday = date => date.getDay() === 1;
 
-  function isHoliday(date) {
+  const isHoliday = date => {
     const holidays = database.getHolidays();
     for (let row of holidays) {
       let holiday = new Date(row.holiday);
@@ -93,9 +91,9 @@ function createApp(database) {
       }
     }
     return false;
-  }
+  };
 
   return app;
-}
+};
 
 export { createApp };
