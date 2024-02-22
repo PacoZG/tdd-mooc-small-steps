@@ -38,6 +38,7 @@ const createApp = (database: Database) => {
       return calculateCostForDayTicket(age, date, baseCost);
     }
   };
+  
 
   const calculateCostForNightTicket = (age: number | undefined, baseCost: number) => {
     if (age === undefined) {
