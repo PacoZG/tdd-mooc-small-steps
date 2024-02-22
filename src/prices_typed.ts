@@ -76,8 +76,6 @@ const createApp = (database: Database) => {
     return Math.ceil(baseCost * (1 - reduction / 100));
   };
 
-  const calculateReduction = (date: Date | undefined) => {
-  };
 
   const calculatePlainReduction = (plainDate: Temporal.PlainDate | undefined) => {
     if (plainDate && isPlainMonday(plainDate) && !isPlainHoliday(plainDate)) {
