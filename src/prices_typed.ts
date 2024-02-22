@@ -27,9 +27,6 @@ const createApp = (database: Database) => {
   });
 
   const parseDate = (dateString: string | undefined): Date | undefined => {
-    if (dateString) {
-      return new Date(dateString);
-    }
   };
 
   const parsePlainDate = (dateString: string | undefined): Temporal.PlainDate | undefined => {
