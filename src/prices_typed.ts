@@ -94,7 +94,7 @@ const createApp = (database: Database) => {
     }
     return false;
   };
-  
+
   const isHoliday = (date: Date | undefined) => {
     const holidays = database.getHolidays();
     for (let row of holidays) {
@@ -102,8 +102,7 @@ const createApp = (database: Database) => {
       if (
         date &&
         date.getFullYear() === holiday.getFullYear() &&
-        date.getMonth() === holiday.getMonth() &&
-        date.getDate() === holiday.getDate()
+        date.getMonth() === holiday.getMonth()
       ) {
         return true;
       }
