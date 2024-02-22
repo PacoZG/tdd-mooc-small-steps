@@ -99,7 +99,7 @@ const createApp = database => {
     for (let row of holidays) {
       let holiday = Temporal.PlainDate.from(row.holiday);
       if (date && holiday.equals(date)) {
-        return true;
+        return holiday.equals(date);
       }
 
     }
