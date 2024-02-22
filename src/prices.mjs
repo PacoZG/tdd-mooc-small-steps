@@ -32,11 +32,11 @@ const createApp = database => {
 
   const parsePlainDate = dateString => {};
 
-  const calculateCost = (age, type, date, baseCost) => {
+  const calculateCost = (age, type, date, baseCost, plainDate) => {
     if (type === 'night') {
       return calculateCostForNightTicket(age, baseCost);
     } else {
-      return calculateCostForDayTicket(age, date, baseCost);
+      return calculateCostForDayTicket(age, date, baseCost, plainDate);
     }
   };
 
