@@ -78,7 +78,7 @@ const createApp = database => {
 
   const calculateOtherReduction = date => {
     let reduction = 0;
-    if (date) {
+    if (date && isPlainMonday(date)) {
       reduction = 35;
     }
     return reduction;
