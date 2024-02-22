@@ -94,7 +94,9 @@ const createApp = (database: Database) => {
   };
 
   const isPlainMonday = (date: Temporal.PlainDate) => date.dayOfWeek === 1;
-  const isPlainHoliday = (date: Temporal.PlainDate) => false;
+  const isPlainHoliday = (date: Temporal.PlainDate) => {
+    return false;
+  };
 
   const isMonday = (date: Date) => date.getDay() === 1;
 
