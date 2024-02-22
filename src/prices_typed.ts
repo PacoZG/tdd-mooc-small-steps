@@ -95,9 +95,6 @@ const createApp = (database: Database) => {
     return false;
   };
 
-  const isHoliday = (date: Date | undefined) => {
-    return false;
-  };
 
   return app;
 };
