@@ -39,11 +39,10 @@ const createApp = (database: Database) => {
   };
 
   const calculateCost = (age: number | undefined, type: string, date: Date | undefined, plainDate: Temporal.PlainDate | undefined, baseCost: number) => {
-    console.log(plainDate);
     if (type === "night") {
       return calculateCostForNightTicket(age, baseCost);
     } else {
-      return calculateCostForDayTicket(age, date, baseCost);
+      return calculateCostForDayTicket(age, date, plainDate, baseCost);
     }
   };
 
@@ -60,7 +59,8 @@ const createApp = (database: Database) => {
     return baseCost;
   };
 
-  const calculateCostForDayTicket = (age: number | undefined, date: Date | undefined, baseCost: number) => {
+  const calculateCostForDayTicket = (age: number | undefined, date: Date | undefined, plainDate: Temporal.PlainDate | undefined, baseCost: number) => {
+    console.log(plainDate);
     let reduction = calculateReduction(date);
     if (age === undefined) {
       return Math.ceil(baseCost * (1 - reduction / 100));
