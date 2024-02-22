@@ -105,9 +105,6 @@ const createApp = database => {
 
   const isHoliday = date => {
     const holidays = database.getHolidays();
-    for (let row of holidays) {
-      let holiday = new Date(row.holiday);
-    }
   };
 
   return app;
