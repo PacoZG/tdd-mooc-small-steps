@@ -96,6 +96,10 @@ const createApp = (database: Database) => {
   const isPlainMonday = (date: Temporal.PlainDate) => date.dayOfWeek === 1;
   const isPlainHoliday = (date: Temporal.PlainDate) => {
     const holidays = database.getHolidays();
+    for (let row of holidays) {
+      let holiday = new Date(row.holiday);
+    }
+
     return false;
   };
 
