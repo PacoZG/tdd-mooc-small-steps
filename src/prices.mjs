@@ -31,8 +31,7 @@ const createApp = database => {
     }
   };
 
-  const parsePlainDate = dateString => dateString && Temporal.PlainDate.from(
-    dateString);
+  const parsePlainDate = dateString => dateString && Temporal.PlainDate.from(dateString);
 
   const calculateCost = (age, type, date, baseCost, plainDate) => {
     console.log('TEMPORAL DATE: ', plainDate);
