@@ -31,6 +31,7 @@ const createApp = (database: Database) => {
       return new Date(dateString);
     }
   };
+
   const parsePlainDate = (dateString: string | undefined) => dateString;
 
   const calculateCost = (age: number | undefined, type: string, date: Date | undefined, baseCost: number) => {
