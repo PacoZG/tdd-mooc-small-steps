@@ -23,7 +23,7 @@ const createApp = (database: Database) => {
     const date = parseDate(req.query.date as string);
     const plainDate = parsePlainDate(req.query.date as string);
     console.log(plainDate);
-    const cost = calculateCost(age, type, date, baseCost);
+    const cost = calculateCost(age, type, date, plainDate, baseCost);
     res.json({ cost });
   });
 
@@ -32,14 +32,15 @@ const createApp = (database: Database) => {
       return new Date(dateString);
     }
   };
-  
+
   const parsePlainDate = (dateString: string | undefined): Temporal.PlainDate | undefined => {
     if (dateString) {
       return Temporal.PlainDate.from(dateString);
     }
   };
 
-  const calculateCost = (age: number | undefined, type: string, date: Date | undefined, baseCost: number) => {
+  const calculateCost = (age: number | undefined, type: string, date: Date | undefined, plainDate: Temporal.PlainDate | undefined, baseCost: number) => {
+    console.log(plainDate);
     if (type === "night") {
       return calculateCostForNightTicket(age, baseCost);
     } else {
