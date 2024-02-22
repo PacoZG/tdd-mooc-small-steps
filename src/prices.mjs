@@ -108,8 +108,7 @@ const createApp = database => {
     for (let row of holidays) {
       let holiday = new Date(row.holiday);
       if (
-        date &&
-        date.getFullYear() === holiday.getFullYear()
+        date
       ) {
         return true;
       }
