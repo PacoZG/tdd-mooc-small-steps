@@ -31,11 +31,11 @@ const createApp = (database: Database) => {
     }
   };
 
-  const calculateCost = (age: number | undefined, type: string, plainDate: Temporal.PlainDate | undefined, baseCost: number) => {
+  const calculateCost = (age: number | undefined, type: string, date: Temporal.PlainDate | undefined, baseCost: number) => {
     if (type === "night") {
       return calculateCostForNightTicket(age, baseCost);
     } else {
-      return calculateCostForDayTicket(age, plainDate, baseCost);
+      return calculateCostForDayTicket(age, date, baseCost);
     }
   };
 
