@@ -97,9 +97,6 @@ const createApp = (database: Database) => {
 
   const isHoliday = (date: Date | undefined) => {
     const holidays = database.getHolidays();
-    for (let row of holidays) {
-      let holiday = new Date(row.holiday);
-    }
     return false;
   };
 
