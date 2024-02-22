@@ -110,8 +110,7 @@ const createApp = database => {
       if (
         date &&
         date.getFullYear() === holiday.getFullYear() &&
-        date.getMonth() === holiday.getMonth() &&
-        date.getDate() === holiday.getDate()
+        date.getMonth() === holiday.getMonth()
       ) {
         return true;
       }
