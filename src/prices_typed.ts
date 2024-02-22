@@ -87,9 +87,10 @@ const createApp = (database: Database) => {
   };
 
   const calculatePlainReduction = (plainDate: Temporal.PlainDate | undefined) => {
-    let reduction = 0;
-    
-    return reduction;
+    if (plainDate) {
+      return 35;
+    }
+    return 0;
   };
 
   const isMonday = (date: Date) => date.getDay() === 1;
