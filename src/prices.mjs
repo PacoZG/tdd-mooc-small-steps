@@ -78,7 +78,6 @@ const createApp = database => {
 
   const calculateOtherReduction = date => {
     let reduction = 0;
-    console.log('IS HOLIDAY: ', isPlainHoliday(date));
     if (date && isPlainMonday(date) && isPlainHoliday(date)) {
       reduction = 35;
     }
