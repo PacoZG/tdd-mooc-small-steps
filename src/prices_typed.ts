@@ -87,6 +87,7 @@ const createApp = (database: Database) => {
   };
 
   const calculatePlainReduction = (plainDate: Temporal.PlainDate | undefined) => {
+    
     return plainDate;
   };
 
