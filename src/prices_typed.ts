@@ -33,7 +33,7 @@ const createApp = (database: Database) => {
     }
   };
 
-  const parsePlainDate = (dateString: string | undefined): Temporal.Plain | undefined => dateString;
+  const parsePlainDate = (dateString: string | undefined): Temporal.PlainDate | undefined => dateString;
 
   const calculateCost = (age: number | undefined, type: string, date: Date | undefined, baseCost: number) => {
     if (type === 'night') {
