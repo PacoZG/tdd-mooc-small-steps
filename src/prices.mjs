@@ -29,7 +29,9 @@ const createApp = database => {
       return new Date(dateString);
     }
   };
+
   const parsePlainDate = () => {};
+
   const calculateCost = (age, type, date, baseCost) => {
     if (type === 'night') {
       return calculateCostForNightTicket(age, baseCost);
