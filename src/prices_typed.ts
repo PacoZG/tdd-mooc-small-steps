@@ -60,9 +60,7 @@ const createApp = (database: Database) => {
   };
 
   const calculateCostForDayTicket = (age: number | undefined, date: Date | undefined, plainDate: Temporal.PlainDate | undefined, baseCost: number) => {
-    let reduction = calculateReduction(date);
     let plainReduction = calculatePlainReduction(plainDate);
-    console.log(plainReduction);
     if (age === undefined) {
       return Math.ceil(baseCost * (1 - plainReduction / 100));
     }
