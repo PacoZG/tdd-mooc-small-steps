@@ -75,6 +75,7 @@ const createApp = database => {
   };
 
   const calcultePlainReduction = date => {
+    
   };
 
   const calculateReduction = date => {
