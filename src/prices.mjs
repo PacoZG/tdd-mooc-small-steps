@@ -81,9 +81,6 @@ const createApp = database => {
     return reduction;
   };
 
-  const calculateReduction = date => {
-  };
-
   const isMonday = (date) => date.dayOfWeek === 1;
 
   const isPlainHoliday = (date) => {
