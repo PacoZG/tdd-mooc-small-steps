@@ -83,9 +83,6 @@ const createApp = database => {
 
   const calculateReduction = date => {
     let reduction = 0;
-    if (date && !isHoliday(date)) {
-      reduction = 35;
-    }
     return reduction;
   };
 
