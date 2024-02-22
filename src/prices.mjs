@@ -94,7 +94,9 @@ const createApp = database => {
 
   const isPlainMonday = (date) => date.dayOfWeek === 1;
 
-  const isPlainHoliday = () => {
+  const isPlainHoliday = (date) => {
+    const holidays = database.getHolidays();
+
   };
 
   const isMonday = date => date.getDay() === 1;
