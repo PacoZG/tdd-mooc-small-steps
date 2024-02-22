@@ -1,5 +1,6 @@
 import './polyfills';
 import express from 'express';
+import { Temporal } from '@js-temporal/polyfill';
 
 // Refactor the following code to get rid of the legacy Date class.
 // Use Temporal.PlainDate instead. See /test/date_conversion.spec.mjs for examples.
@@ -30,7 +31,7 @@ const createApp = database => {
     }
   };
 
-  const parsePlainDate = dateString => {};
+  const parsePlainDate = dateString => dateString && Temporal.PlainDate.from(dateString);
 
   const calculateCost = (age, type, date, baseCost, plainDate) => {
     if (type === 'night') {
