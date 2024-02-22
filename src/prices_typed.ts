@@ -77,8 +77,6 @@ const createApp = (database: Database) => {
   };
 
   const calculateReduction = (date: Date | undefined) => {
-    let reduction = 0;
-    return reduction;
   };
 
   const calculatePlainReduction = (plainDate: Temporal.PlainDate | undefined) => {
