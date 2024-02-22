@@ -34,6 +34,7 @@ const createApp = database => {
   const parsePlainDate = dateString => dateString && Temporal.PlainDate.from(dateString);
 
   const calculateCost = (age, type, date, baseCost, plainDate) => {
+    console.log('TEMPORAL DATE: ', plainDate);
     if (type === 'night') {
       return calculateCostForNightTicket(age, baseCost);
     } else {
