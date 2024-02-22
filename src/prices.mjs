@@ -75,7 +75,7 @@ const createApp = database => {
 
   const calculateOtherReduction = date => {
     let reduction = 0;
-    if (date && isPlainMonday(date) && !isPlainHoliday(date)) {
+    if (date && isMonday(date) && !isPlainHoliday(date)) {
       reduction = 35;
     }
     return reduction;
@@ -89,7 +89,7 @@ const createApp = database => {
     return reduction;
   };
 
-  const isPlainMonday = (date) => date.dayOfWeek === 1;
+  const isMonday = (date) => date.dayOfWeek === 1;
 
   const isPlainHoliday = (date) => {
     const holidays = database.getHolidays();
