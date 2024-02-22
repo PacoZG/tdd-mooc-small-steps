@@ -60,6 +60,7 @@ const createApp = database => {
     console.log('TEMPORAL DATE: ', plainDate);
     let reduction = calculateReduction(date);
     let otherReduction = calculateOtherReduction(date);
+    'OTHER REDUCTION: ' + otherReduction.log;
     if (age === undefined) {
       return Math.ceil(baseCost * (1 - reduction / 100));
     }
