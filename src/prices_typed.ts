@@ -94,7 +94,7 @@ const createApp = (database: Database) => {
     }
     return false;
   };
-  
+
   return app;
 };
 
