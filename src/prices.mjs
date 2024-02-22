@@ -95,10 +95,6 @@ const createApp = database => {
 
   };
 
-  const isHoliday = date => {
-    const holidays = database.getHolidays();
-  };
-
   return app;
 };
 
