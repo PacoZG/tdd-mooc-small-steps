@@ -24,7 +24,7 @@ const createApp = (database: Database) => {
     const cost = calculateCost(age, type, plainDate, baseCost);
     res.json({ cost });
   });
-  
+
   const parsePlainDate = (dateString: string | undefined): Temporal.PlainDate | undefined => {
     if (dateString) {
       return Temporal.PlainDate.from(dateString);
@@ -70,14 +70,14 @@ const createApp = (database: Database) => {
   };
 
   const calculateReduction = (plainDate: Temporal.PlainDate | undefined) => {
-    if (plainDate && isPlainMonday(plainDate) && !isPlainHoliday(plainDate)) {
+    if (plainDate && isMonday(plainDate) && !isHoliday(plainDate)) {
       return 35;
     }
     return 0;
   };
 
-  const isPlainMonday = (date: Temporal.PlainDate) => date.dayOfWeek === 1;
-  const isPlainHoliday = (date: Temporal.PlainDate) => {
+  const isMonday = (date: Temporal.PlainDate) => date.dayOfWeek === 1;
+  const isHoliday = (date: Temporal.PlainDate) => {
     const holidays = database.getHolidays();
     for (let row of holidays) {
       let holiday = Temporal.PlainDate.from(row.holiday);
