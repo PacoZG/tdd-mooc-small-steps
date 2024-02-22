@@ -24,9 +24,6 @@ const createApp = database => {
     res.json({ cost });
   });
 
-  const parseDate = dateString => {
-  };
-
   const parsePlainDate = dateString => {
     return dateString && Temporal.PlainDate.from(dateString);
   };
