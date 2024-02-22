@@ -102,8 +102,8 @@ const createApp = database => {
       if (date && holiday.equals(date)) {
         return holiday.equals(date);
       }
-      return false;
     }
+    return false;
 
   };
 
