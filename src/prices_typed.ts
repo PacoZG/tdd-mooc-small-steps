@@ -99,7 +99,6 @@ const createApp = (database: Database) => {
     for (let row of holidays) {
       let holiday = new Date(row.holiday);
     }
-
     return false;
   };
 
